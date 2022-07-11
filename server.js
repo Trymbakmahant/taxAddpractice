@@ -1,6 +1,7 @@
 const express = require("express");
 const createtasklist = require("./routes/createtasklist");
 const createtask = require("./routes/createtask");
+const tasklist = require("./routes/tasklist");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
@@ -9,6 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/createtasklist", createtasklist);
 app.use("/createtask", createtask);
+app.use("/tasklist", tasklist);
 
 mongoose.connect(
   "mongodb+srv://TaxAdda:0kjfFe5OgjKp48fP@cluster0.ms82f.mongodb.net/?retryWrites=true&w=majority",
