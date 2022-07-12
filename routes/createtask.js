@@ -25,7 +25,7 @@ router.route("/").post((req, res) => {
   ];
   const arr = period.split("-");
   // this below code for converting indian time to ISO time format
-  var dateobj = new Date(` ${mlist[(arr[0] % 13) + 1]} ${arr[1]} , ${arr[2]} `);
+  var dateobj = new Date(` ${mlist[arr[0] % 13]} ${arr[1]} , ${arr[2]} `);
   console.log(dateobj);
   var duedate = new Date(dateobj);
 
