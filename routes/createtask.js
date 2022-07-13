@@ -26,7 +26,7 @@ router.route("/").post((req, res) => {
   const arr = period.split("-");
   // this below code for converting indian time to ISO time format
   var dateobj = new Date(` ${mlist[arr[0] % 13]} ${arr[1]} , ${arr[2]} `);
-  console.log(dateobj);
+  
   var duedate = new Date(dateobj);
 
   if (periodtype == "yearly") {
@@ -34,7 +34,7 @@ router.route("/").post((req, res) => {
   } else if (periodtype == "monthly") {
     duedate = new Date(dateobj.setMonth(dateobj.getMonth() + 1));
   }
-  console.log(duedate);
+ 
   const newTask = new Task({
     taskname,
     description,
